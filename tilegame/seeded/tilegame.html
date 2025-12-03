@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brikspil - Freestyle</title>
+    <title>Brikspil - Deterministisk</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="tilegame.css">
@@ -13,14 +13,15 @@
 
 <body>
     <div class="game-over hidden">
-        <h1 class="big">GAME OVER!</h1>
+        <h1 class  ="big">GAME OVER!</h1>
     </div>
     <div class="gamecontrol">
         <div>
             <h1>Placer brik:</h1>
             <div id="tile-container"></div>
         </div>
-        <h2>Smidt væk: <span id="counter">0</span>/<span id="counter_max">3</span></h2>
+        <h2>Smidt væk: <span id="counter">0</span></h2>
+        <h2>Brikker sat: <span id="tile-counter">0</span>/<span id="tile-max">49</span></h2>
         <h1>Point: <span id="point">0</span></h1>
     </div>
     <div class="popup">

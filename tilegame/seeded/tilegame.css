@@ -1,0 +1,240 @@
+button, select, option {
+    cursor: pointer;
+}
+
+button, select, option, input, optgroup {
+    padding: 3px 5px;
+    font-size: 20px;
+    color: black;
+}
+
+.have-won {
+    background-color: greenyellow;
+}
+
+input {
+    width: 10%;
+    font-size: 30px;
+}
+
+.gamearea {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 200px;
+    margin: 0 auto;
+    padding-left: 30%;
+}
+.gamearea > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.popup {
+    opacity: 0;
+    transition: opacity 0.5s;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: fixed;
+    width: 20%;
+    padding: 10px 20px;
+    margin: 20px;
+    bottom: 80px;
+    left: 0;
+    border-radius: 20px;
+    background-color: rgb(27, 26, 29);
+    gap: 10px;
+    z-index: 100;
+}
+
+.popup>h2 {
+    margin: 5px;
+}
+
+.display {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.gamecontrol {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 30%;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: rgb(27, 26, 29);
+    gap: 10px;
+    z-index: 100;
+}
+
+.game-buttons {
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 20%;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+    bottom: 0;
+    left: 0;
+    gap: 10px;
+}
+
+.game-button {
+    user-select: none;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    background-color: rgba(128, 113, 158, 0.582);
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.game-selector {
+    display: inline-block;
+    user-select: none;
+    border: none;
+    height: 60px;
+    width: 60px;
+    background-color: rgba(128, 113, 158, 0.582);
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0;
+}
+
+.game-button:hover {
+    background-color: rgba(128, 113, 158, 0.845);
+    cursor: pointer;
+}
+
+
+.game-selector:hover {
+    background-color: rgba(128, 113, 158, 0.845);
+    cursor: pointer;
+    border: none;
+}
+
+.gamecontrol > div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gamecontrol > h1, .gamecontrol > h2 {
+    margin: 0;
+}
+
+.tile {
+    /* width: 80px;
+    height: 80px; */
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-color: rgb(83, 80, 90);
+    border-width: 46px;
+    pointer-events: none;
+}
+
+.tile-wrapper {
+    position: relative;
+    z-index: 1;
+    height: 92px;
+    width: 92px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.tile-symbol {
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    text-shadow: 1px 1px 2px black;
+}
+
+.tile-wrapper:hover {
+    box-shadow: 0 0px 20px 0 rgba(43, 26, 57, 0.79);
+}
+
+.game-over {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.726);
+    text-align: center;
+}
+
+.game-over > .big {
+    margin-top: 50vh;
+    margin-bottom: 2vh;
+}
+
+#again {
+    color: black;
+    font-size: 30px;
+}
+
+@media (max-width: 1000px) {
+
+    .tile {
+        border-width: 36px;
+    }
+
+    .tile-wrapper {
+        height: 72px;
+        width: 72px;
+    }
+
+    .gamearea {
+        height: 576px;
+        padding: 220px 320px 80px;
+    }
+    .gamearea > div {
+        width: 576px;
+    }
+
+    .gamecontrol {
+        position: fixed;
+        padding: 10px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .game-buttons{
+        width: 90%;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .popup {
+        width: 80%;
+        bottom: 80px;
+        margin: 5px;
+    }
+  }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="tilegame.css">
+    <title>Vælg spil - Brikspil</title>
+</head>
+<body>
+    <h1>Indtast spil ID</h1>
+    <div id="seed-input">
+        <input max="9" min="0" value="0" type="number" name="1" id="i1">
+        <input max="9" min="0" value="0" type="number" name="2" id="i2">
+        <input max="9" min="0" value="0" type="number" name="3" id="i3">
+        <input max="9" min="0" value="0" type="number" name="4" id="i4">
+        <input max="9" min="0" value="0" type="number" name="5" id="i5">
+    </div>
+    <h2>Eller vælg fra tideligere spil</h2>
+    <select name="seed-selector" id="seed-selector" >
+        <option value="null" selected="selected" hidden>Vælg spil ID</option>
+        <optgroup label = "ikke vundet" id = "nwon">
+        </optgroup>
+        <optgroup label = "vundet" id = "won">
+        </optgroup>
+    </select> <button id="clear-select">〤</button>
+    <h2>Eller få et vilkårligt id</h2>
+    <button id="rand3">Random 3x3</button>
+    <button id="rand4">Random 4x4</button>
+    <button id="rand5">Random 5x5</button>
+    <button id="rand6">Random 6x6</button>
+    <button id="rand7">Random 7x7</button>
+    <br>
+    <br>
+    <button id="start">Start spil</button>
+    <script defer src="selectSeed.js"></script>
+</body>
+</html>
