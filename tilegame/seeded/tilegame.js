@@ -26,7 +26,7 @@ let round = 0
 let points = 0
 let tiles_placed = 0
 let discard_combo = 0
-let help_tiles_placed = 0
+let tile_type_in_hand = null
 
 const seed = urlParams.get("seed");
 const board_control = parseInt(seed.charAt(0));
@@ -280,13 +280,35 @@ function next_placable_tile_type(){
         const placable_for_tile = get_clear_around(p[0],p[1])
         placables = placables.concat(placable_for_tile)
     })
-    const tile_pos_to_place = placables[Math.floor(randf()*placables.length)]
+    let tile_pos_to_place = placables[Math.floor(randf()*placables.length)]
+    if (tile_pos_to_place == null){
+        tile_pos_to_place = get_any_unplaced_tile_pos();
+        if (tile_pos_to_place == null){
+            return naked_data;
+        }
+    }
     let tile_type = emu_board[tile_pos_to_place[0]][tile_pos_to_place[1]]
+    if (tile_type == null || tile_type === tile_type_in_hand ) {
+        tile_pos_to_place = get_any_unplaced_tile_pos();
+        tile_type = emu_board[tile_pos_to_place[0]][tile_pos_to_place[1]]
+    }
     for(let rot = 0; rot < rand(); rot++){
-        tile = rotate_tile_data(tile_type);
+        tile_type = rotate_tile_data(tile_type);
     }
     emu_board[tile_pos_to_place[0]][tile_pos_to_place[1]] = null
+    tile_type_in_hand = tile_type
+
     return tile_type
+}
+
+function get_any_unplaced_tile_pos(){
+    for(let row = 0; row < gameboard_size(); row++){
+        for(let col = 0; col < gameboard_size(); col++){
+            if (emu_board[row][col] != null){
+                return [row, col]
+            }
+        }
+    }
 }
 
 function rotate_tile_data(old_data) {
